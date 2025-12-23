@@ -26,7 +26,8 @@ jobs:
             # 在这里添加更多仓库
             #"KWL:https://github.com/kimwang1978/collect-txt.git"
             #"MYTV:https://github.com/cyalias/mytvs-github.git"
-            "IPTV:https://github.com/Guovin/iptv-api.git"
+            #"IPTV:https://github.com/Guovin/iptv-api.git"
+            "AX:https://github.com/alantang1977/X.git"
           )
           
           for repo in "${repos[@]}"; do
