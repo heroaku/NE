@@ -24,10 +24,10 @@ jobs:
           # 要同步的仓库列表（格式：文件夹名:仓库URL）
           repos=(
             # 在这里添加更多仓库
-            #"KWL:https://github.com/kimwang1978/collect-txt.git"
-            #"MYTV:https://github.com/cyalias/mytvs-github.git"
-            #"IPTV:https://github.com/Guovin/iptv-api.git"
-            "AX:https://github.com/alantang1977/X.git"
+            "KWL:https://github.com/kimwang1978/collect-txt.git"
+            "MYTV:https://github.com/cyalias/mytvs-github.git"
+            "IPTV:https://github.com/Guovin/iptv-api.git"
+
           )
           
           for repo in "${repos[@]}"; do
