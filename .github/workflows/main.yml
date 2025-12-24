@@ -28,7 +28,8 @@ jobs:
            # "MYTV:https://github.com/cyalias/mytvs-github.git"
            # "IPTV:https://github.com/Guovin/iptv-api.git"
            # "FREEBOX:https://github.com/kknifer7/FreeBox.git"
-            "HD9B:https://github.com/hd9211/Tvbox1.git"
+           # "HD9B:https://github.com/hd9211/Tvbox1.git"
+            "TVURL:https://github.com/ne7359/tvurl.git"
 
           )
           
