@@ -27,7 +27,9 @@ jobs:
            # "KWL:https://github.com/kimwang1978/collect-txt.git"
            # "MYTV:https://github.com/cyalias/mytvs-github.git"
            # "IPTV:https://github.com/Guovin/iptv-api.git"
-            "FREEBOX:https://github.com/kknifer7/FreeBox.git"
+           # "FREEBOX:https://github.com/kknifer7/FreeBox.git"
+            "HD9B:https://github.com/hd9211/Tvbox1.git"
+
           )
           
           for repo in "${repos[@]}"; do
