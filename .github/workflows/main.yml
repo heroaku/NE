@@ -31,7 +31,8 @@ jobs:
            # "HD9B:https://github.com/hd9211/Tvbox1.git"
            # "TVURL:https://github.com/ne7359/tvurl.git"
            # "LSTG:https://github.com/ls125781003/tvboxtg.git"
-             "JADR:https://github.com/jak0099/dr.git"
+           # "JADR:https://github.com/jak0099/dr.git"
+             "NSFW:https://github.com/CatVodSpider-GM/SFW-Spiders.git"
 
           )
           
