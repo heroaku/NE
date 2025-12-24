@@ -27,7 +27,7 @@ jobs:
             "KWL:https://github.com/kimwang1978/collect-txt.git"
             "MYTV:https://github.com/cyalias/mytvs-github.git"
             "IPTV:https://github.com/Guovin/iptv-api.git"
-
+            "TVAPP:https://github.com/youhunwl/TVAPP.git"
           )
           
           for repo in "${repos[@]}"; do
