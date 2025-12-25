@@ -2,6 +2,52 @@
   "spider": "./Spiders-Lib/GM.jar;md5;7dd67a73e49dbf1cd32f56e329fce7b3",
   "sites": [
     {
+      "key": "cheshi",
+      "name": "测试| 聚合",
+      "type": 3,
+      "searchable": 1,
+      "changeable": 1,
+      "quickSearch": 0,
+      "style": {
+        "type": "rect",
+        "ratio": 0.71
+      },
+      "api": "csp_GM",
+      "ext": {
+        "userScript": "./userScripts/testscript.js",
+        "debug": false,
+        "webViewSettings": {
+          "blockNetworkImage": true,
+          "blockList": [
+            "https://hm.baidu.com/*"
+          ]
+        },
+        //https://www.netflixgc.com/vodshow/2-----------.html
+        "playUrlMatch": [
+          "*://*/*.m3u8*"
+        ],
+        "spider": {
+          "homeContent": {
+            "loadUrl": "https://www.netflixgc.com/"
+          },
+          "categoryContent": {
+            "loadUrl": "https://www.netflixgc.com/vodshow/${tid}-${index0:-}-${index1:-}-${index2:-}-${index3:-}-${index4:-}-${index5:-}-${index6:-}-${pg:-1}-${index8:-}-${index9:-}-${index10:-}.html"
+          },
+          "detailContent": {
+            "loadUrl": "https://www.netflixgc.com${id}"
+          },
+          "playerContent": {
+            "loadUrl": "https://www.netflixgc.com${playUrl}"
+          },
+          "searchContent": {
+            "loadUrl": "https://www.netflixgc.com/vodsearch/${key}----------${pg:-1}---.html"
+          }
+        }
+      }
+    },
+
+    
+    {
       "key": "hitv",
       "name": "Hi视频 | 自营",
       "type": 3,
