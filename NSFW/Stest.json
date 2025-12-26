@@ -1,5 +1,5 @@
 {
-  "spider": "https://github.com/heroaku/NE/raw/refs/heads/main/NSFW/SFW/Spiders-Lib/GM.jar;md5;7dd67a73e49dbf1cd32f56e329fce7b3",
+  "spider": "./SFW/Spiders-Lib/GM.jar;md5;7dd67a73e49dbf1cd32f56e329fce7b3",
   "sites": [
 	   {"key": "drpy_js_test","name": " 🎑js测试[DRPY]","type": 3,"api": "https://github.com/heroaku/drpy/raw/master/libs/drpy2.min.js","ext": "https://github.com/heroaku/TVboxo/raw/main/JS/%E6%A8%A1%E7%89%88/jstest.js"},	
    {"key":"csp_xBPQ_test测试","name":" 🍂测试 xBPQ","type":3,"api":"csp_XBPQ","searchable":1,"quickSearch":1,"filterable":0,"ext":"https://github.com/heroaku/TVboxo/raw/main/XBPQ/test/xbpqtest.json"},
