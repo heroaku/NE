@@ -18,23 +18,7 @@
             "filterable": 1,
             "playerType": 2
         },
-	  {
-  "key": "huochetaidu2",
-  "name": "火车太堵2 | 聚合",
-  "type": 3,
-  "searchable": 1,
-  "changeable": 1,
-  "quickSearch": 0,
-  "style": {
-    "type": "rect",
-    "ratio": 0.71
-  },
-  "api": "csp_GM",
-  "ext": {
-    "userScript": "./huochetaidu.user.js",
-    "debug": false
-  }
-},
+{"key": "huochetaidu2","name": "火车太堵2 | 聚合","type": 3,"searchable": 1,"changeable": 1,"quickSearch": 0,"style": {"type": "rect","ratio": 0.71},"api": "csp_GM","ext": {"userScript": "./huochetaidu.user.js","debug": false}},
     {
       "key": "cheshi",
       "name": "测试| 聚合",
