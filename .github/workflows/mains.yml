@@ -1,0 +1,92 @@
+name: Sync S Repositories
+
+on: workflow_dispatch
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. 检出代码
+      - uses: actions/checkout@v4
+        
+      # 2. 配置Git
+      - name: Setup Git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          
+      # 3. 批量同步多个仓库
+      - name: Sync multiple repositories
+        run: |
+          echo "=== 开始批量同步 ==="
+          
+          # 要同步的仓库列表（格式：文件夹名:仓库URL）
+          repos=(
+            # 在这里添加更多仓库
+           # "KWL:https://github.com/kimwang1978/collect-txt.git"
+           # "MYTV:https://github.com/cyalias/mytvs-github.git"
+           # "IPTV:https://github.com/Guovin/iptv-api.git"
+           # "FREEBOX:https://github.com/kknifer7/FreeBox.git"
+           # "HD9B:https://github.com/hd9211/Tvbox1.git"
+           # "TVURL:https://github.com/ne7359/tvurl.git"
+           # "LSTG:https://github.com/ls125781003/tvboxtg.git"
+           # "JADR:https://github.com/jak0099/dr.git"
+           # "NSFW/SFW:https://github.com/CatVodSpider-GM/SFW-Spiders.git"
+           # "NSFW/DOC:https://github.com/CatVodSpider-GM/docs.git"
+           # "NSFW/NSFW:https://github.com/CatVodSpider-GM/NSFW-Spiders.git"
+           "J123:https://github.com/jie20091116/123.git"
+
+          )
+          
+          for repo in "${repos[@]}"; do
+            # 解析文件夹名和URL
+            folder="${repo%%:*}"
+            url="${repo#*:}"
+            
+            echo ""
+            echo "🔄 同步: $folder"
+            echo "源仓库: $url"
+            
+            # 创建临时目录
+            tmp=$(mktemp -d)
+            
+            # 克隆并复制
+            if git clone --depth 1 "$url" "$tmp" 2>/dev/null; then
+              # 准备目标文件夹
+              mkdir -p "$folder"
+              rm -rf "$folder"/*
+              
+              # 复制文件
+              cp -r "$tmp"/* "$folder"/ 2>/dev/null || true
+              
+              # 统计结果
+              count=$(find "$folder" -type f 2>/dev/null | wc -l)
+              echo "✅ 成功 ($count 个文件)"
+            else
+              echo "❌ 失败"
+            fi
+            
+            # 清理
+            rm -rf "$tmp"
+          done
+          
+          echo ""
+          echo "=== 同步完成 ==="
+          
+      # 4. 提交和推送
+      - name: Commit and push
+        run: |
+          # 添加更改
+          git add .
+          
+          # 提交（使用安全的信息）
+          git commit -m "Sync update" || exit 0
+          
+          # 推送
+          echo "推送到仓库..."
+          git push
+          
+          echo ""
+          echo "✅ 同步完成并已推送！"
+          echo "👉 查看更新: https://github.com/${{ github.repository }}"
